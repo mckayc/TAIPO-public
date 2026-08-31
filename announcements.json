@@ -83,5 +83,89 @@
     "body": "Click \"Edit Dashboard\" to reveal a gear icon on every card (change what it shows) and a delete icon (remove it), plus a \"+ Add Card\" tile for adding new Stat cards (a single number, like Total Earnings or Clicks) or Feed cards (a short list, like Recent Clicks or this Announcements card).\n\nYour layout is saved automatically and isn't tied to any specific task — it keeps working the same way whether you have one task or fifty.",
     "linkUrl": "",
     "linkLabel": ""
+  },
+  {
+    "id": "2026-08-23-sidebar-reorder",
+    "type": "small",
+    "date": "2026-08-23T13:20:00Z",
+    "title": "Sidebar reorganized",
+    "body": "Navigation is now grouped into Dashboard/Reports/Timeline/Earnings, Tasks & Setup, and Discovery, with Labs and Report Snapshots tucked into the footer.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-22-column-auto-hide",
+    "type": "small",
+    "date": "2026-08-22T10:05:00Z",
+    "title": "Columns auto-collapse after a run",
+    "body": "Empty columns now automatically hide themselves once a task finishes running, instead of only updating the next time you navigate away and back.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-21-video-ranker",
+    "type": "large",
+    "date": "2026-08-21T09:40:00Z",
+    "title": "Video Ranker lab",
+    "teaser": "An experimental tool for scoring your uploaded videos against each other.",
+    "body": "Labs now has a Video Ranker that pulls videos from a collection and scores them against configurable weights, so you can spot which uploads are most worth prioritizing for Creator Connections follow-up.\n\nLike everything under Labs, this is experimental — expect it to change shape as we get more use out of it.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-20-opportunity-scout",
+    "type": "small",
+    "date": "2026-08-20T17:10:00Z",
+    "title": "Opportunity Scout lab",
+    "body": "A new experimental Labs tool for surfacing product opportunities worth investigating, based on your saved collections.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-19-international-uploading",
+    "type": "large",
+    "date": "2026-08-19T08:00:00Z",
+    "title": "Amazon Pages setup wizard",
+    "teaser": "A guided walkthrough for every Amazon Page Enhancement and International Uploading setting.",
+    "body": "Settings' Amazon Pages / International Uploading groups can now be configured through a 10-step guided wizard instead of a flat settings list, with an explanation for what each option actually does before you turn it on.\n\nFind it from Add Tasks & Features → Amazon Page Enhancements.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-18-delete-all-data-fix",
+    "type": "small",
+    "date": "2026-08-18T14:50:00Z",
+    "title": "Delete All Data fixed",
+    "body": "Settings' Delete All Data button now correctly clears every collection and synced setting — it was silently failing to touch anything before.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-17-collections-browser",
+    "type": "small",
+    "date": "2026-08-17T11:35:00Z",
+    "title": "Collections page",
+    "body": "Browse every collection your tasks have saved to from one place — search, sort, and inspect individual records without needing to re-run a task.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-16-product-explorer",
+    "type": "large",
+    "date": "2026-08-16T15:25:00Z",
+    "title": "Product Explorer",
+    "teaser": "Discover new product opportunities outside of what your existing tasks already track.",
+    "body": "Product Explorer is a new Discovery page for browsing and searching Amazon products independently of your saved tasks — useful for scouting new items before you commit a task to tracking them.\n\nResults here don't automatically get added to any collection; it's a research tool, not a data source for your tasks.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-15-rebrand",
+    "type": "small",
+    "date": "2026-08-15T07:00:00Z",
+    "title": "Welcome to Taipo",
+    "body": "The extension has a new name and look — Taipo (Task AIP Operator). Same data, same tasks, new coat of paint.",
+    "linkUrl": "",
+    "linkLabel": ""
   }
 ]
