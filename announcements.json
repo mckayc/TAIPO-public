@@ -1,8 +1,48 @@
 [
   {
     "id": "2026-08-31-dashboard-refresh",
-    "title": "New Dashboard Home Try 5",
+    "type": "small",
+    "date": "2026-08-31T21:00:00Z",
+    "title": "New Dashboard Home",
     "body": "The Dashboard Home page now shows a live overview of your tasks — stat cards, recent activity feeds, and a timeline chart. Click \"Edit Dashboard\" to customize which cards are shown.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-31-cc-walkthrough",
+    "type": "large",
+    "date": "2026-08-31T18:30:00Z",
+    "title": "Auto-Accept for CC Campaigns",
+    "teaser": "See how the Accept CC Campaigns task finds and accepts opportunities automatically.",
+    "body": "The \"Accept CC Campaigns for My Videos\" task setup card walks you through pulling ASINs from your uploaded videos, checking Creator Connections for active and available campaigns, and optionally auto-accepting new opportunities without you lifting a finger.\n\nExpired campaigns are kept around (with a red badge) instead of being deleted right away, so you can still see what you had until a new campaign shows up for the same product.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-30-rate-limit-tuning",
+    "type": "small",
+    "date": "2026-08-30T15:00:00Z",
+    "title": "Rate limit presets retuned",
+    "body": "The \"Recommended\" and \"Fast\" rate-limit presets are slower now, based on real runs that were getting throttled by Amazon almost instantly. You can still fine-tune them yourself in Settings.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-29-earnings-wizard",
+    "type": "large",
+    "date": "2026-08-29T12:00:00Z",
+    "title": "Amazon Earnings Report task",
+    "teaser": "A new guided setup for scheduling recurring earnings pulls, twice a day.",
+    "body": "The Add Tasks & Features page now has an \"Amazon Earnings Report\" card that walks you through setting up a recurring task: choose a date range, decide whether to fill in real product titles for each ASIN, and pick a twice-daily schedule.\n\nA couple of tips: avoid scheduling a run exactly on the hour (Amazon's own reporting resets right around then), and if you want product titles filled in, point the wizard at the same collection your Clicks task already saves to — it'll reuse that data instead of doing extra work.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-28-log-buttons",
+    "type": "small",
+    "date": "2026-08-28T09:15:00Z",
+    "title": "Per-task log buttons",
+    "body": "Every task in the sidebar now has its own 📋 button — hover to preview the most recent run's log, click to copy it. The old single Copy Log button on the Reports page toolbar is gone.",
     "linkUrl": "",
     "linkLabel": ""
   }
