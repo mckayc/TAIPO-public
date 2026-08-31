@@ -45,5 +45,43 @@
     "body": "Every task in the sidebar now has its own 📋 button — hover to preview the most recent run's log, click to copy it. The old single Copy Log button on the Reports page toolbar is gone.",
     "linkUrl": "",
     "linkLabel": ""
+  },
+  {
+    "id": "2026-08-27-onboarding-wizard",
+    "type": "large",
+    "date": "2026-08-27T16:45:00Z",
+    "title": "Redesigned first-run setup",
+    "teaser": "The welcome wizard now walks through every ID and connection step one at a time.",
+    "body": "First-run setup used to be 3 dense steps. It's now 7 focused ones with a progress bar: welcome, Base ID, Onsite ID, Shop ID, Storefront URL, YouTube channels, and a final confirmation.\n\nThe YouTube step can also auto-detect your channel if you have Creator Studio open in another tab, so you often won't need to paste anything in by hand.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-26-cc-badges",
+    "type": "small",
+    "date": "2026-08-26T11:00:00Z",
+    "title": "Creator Connections status badges",
+    "body": "Product rows now show a colored CC badge — green for active, blue for available, and red for expired (kept around for visibility, not deleted). Hover any badge for details.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-25-first-task-nudge",
+    "type": "small",
+    "date": "2026-08-25T08:30:00Z",
+    "title": "First-task nudge",
+    "body": "If you haven't created any tasks yet, the dashboard now shows a quick prompt pointing you to Add Tasks & Features so there's always a clear next step.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-08-24-editable-dashboard",
+    "type": "large",
+    "date": "2026-08-24T14:00:00Z",
+    "title": "Customize your Dashboard Home",
+    "teaser": "Add, remove, and reconfigure the stat and feed cards on your dashboard.",
+    "body": "Click \"Edit Dashboard\" to reveal a gear icon on every card (change what it shows) and a delete icon (remove it), plus a \"+ Add Card\" tile for adding new Stat cards (a single number, like Total Earnings or Clicks) or Feed cards (a short list, like Recent Clicks or this Announcements card).\n\nYour layout is saved automatically and isn't tied to any specific task — it keeps working the same way whether you have one task or fifty.",
+    "linkUrl": "",
+    "linkLabel": ""
   }
 ]
