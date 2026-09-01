@@ -1,5 +1,23 @@
 [
   {
+    "id": "2026-09-02-scheduled-run-fix",
+    "type": "small",
+    "date": "2026-09-02T10:30:00Z",
+    "title": "Scheduled task trigger fixed",
+    "body": "A bug meant a scheduled task could fail to actually start when it opened a fresh dashboard tab to run in. Scheduled runs now kick off reliably again.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-09-02-manage-tasks-fix",
+    "type": "small",
+    "date": "2026-09-02T09:15:00Z",
+    "title": "Manage Tasks modal fixed",
+    "body": "The reorder/organize modal for tasks (accessible from the manage button on Edit Tasks) had a broken reference and would silently fail to open. It's wired up correctly now.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
     "id": "2026-09-01-announcements-read-clear",
     "type": "large",
     "date": "2026-09-01T09:00:00Z",
