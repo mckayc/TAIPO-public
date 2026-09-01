@@ -1,5 +1,24 @@
 [
   {
+    "id": "2026-09-03-cdn-cache-fix",
+    "type": "large",
+    "date": "2026-09-03T11:00:00Z",
+    "title": "Announcements now update instantly",
+    "teaser": "Fixed a delay where a freshly-published announcement could take a few minutes to show up.",
+    "body": "GitHub's own CDN was occasionally serving a stale cached copy of the announcements file for a few minutes after a push, even though the browser's own cache was already being bypassed correctly.\n\nEach fetch now includes a unique cache-busting parameter, so what you see always matches what's actually live — no more waiting around after publishing an update.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
+    "id": "2026-09-03-storefront-fetch",
+    "type": "small",
+    "date": "2026-09-03T08:45:00Z",
+    "title": "Storefront data refresh",
+    "body": "Storefront product fetches now handle pagination more reliably, so larger storefronts don't get cut off partway through a sync.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
     "id": "2026-09-02-scheduled-run-fix",
     "type": "small",
     "date": "2026-09-02T10:30:00Z",
