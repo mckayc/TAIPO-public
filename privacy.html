@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taipo Privacy Policy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --surface: #ffffff;
+    --surface-2: #f2efe8;
+    --ink: #20242a;
+    --ink-soft: #565f6b;
+    --ink-faint: #8b9198;
+    --accent: #2b6e63;
+    --accent-ink: #17423b;
+    --accent-soft: #e3efec;
+    --border: #e4e0d8;
+    --border-soft: #ece8de;
+    --serif: "Source Serif 4", Georgia, "Iowan Old Style", serif;
+    --sans: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14181a;
+      --surface: #1a2023;
+      --surface-2: #1f2629;
+      --ink: #e9ecec;
+      --ink-soft: #a6b0af;
+      --ink-faint: #6d7776;
+      --accent: #6bd6c1;
+      --accent-ink: #bdf0e3;
+      --accent-soft: #1e332e;
+      --border: #2b3336;
+      --border-soft: #232b2d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14181a;
+    --surface: #1a2023;
+    --surface-2: #1f2629;
+    --ink: #e9ecec;
+    --ink-soft: #a6b0af;
+    --ink-faint: #6d7776;
+    --accent: #6bd6c1;
+    --accent-ink: #bdf0e3;
+    --accent-soft: #1e332e;
+    --border: #2b3336;
+    --border-soft: #232b2d;
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15.5px;
+    line-height: 1.65;
+    padding: 56px 20px 96px;
+    margin: 0;
+  }
+  ::selection { background: var(--accent-soft); color: var(--accent-ink); }
+
+  .doc { max-width: 700px; margin: 0 auto; }
+
+  header.doc-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 9px;
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-weight: 700; font-size: 17px;
+    flex-shrink: 0;
+  }
+  .brand-name { font-family: var(--serif); font-weight: 700; font-size: 21px; letter-spacing: -0.01em; }
+  .brand-sub { font-size: 12.5px; color: var(--ink-faint); margin-top: 1px; }
+  .doc-meta { font-size: 12.5px; color: var(--ink-soft); text-align: right; font-family: var(--mono); white-space: nowrap; }
+  .doc-meta div + div { margin-top: 3px; }
+
+  h1.title {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin: 0 0 8px;
+  }
+  .lede { color: var(--ink-soft); font-size: 15px; max-width: 56ch; margin-bottom: 44px; }
+
+  section.sec { margin-bottom: 36px; }
+  .sec-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+  .sec-num { font-family: var(--mono); font-size: 12.5px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.005em;
+    margin: 0;
+  }
+  .sec p { margin: 0 0 12px; max-width: 66ch; }
+  .sec p:last-child { margin-bottom: 0; }
+  .sec ul { margin: 0 0 12px; padding-left: 22px; max-width: 64ch; }
+  .sec li { margin-bottom: 6px; }
+  .sec li:last-child { margin-bottom: 0; }
+  code.tok {
+    font-family: var(--mono);
+    font-size: 0.86em;
+    background: var(--surface-2);
+    border: 1px solid var(--border-soft);
+    border-radius: 4px;
+    padding: 0.05em 0.4em;
+    color: var(--accent-ink);
+  }
+
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 16px 18px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .callout strong { color: var(--ink); }
+
+  .ledger {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .ledger-row {
+    display: grid;
+    grid-template-columns: minmax(120px, 180px) 1fr;
+    gap: 16px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-soft);
+    align-items: baseline;
+  }
+  .ledger-row:last-child { border-bottom: none; }
+  .ledger-row:nth-child(even) { background: var(--surface-2); }
+  .ledger-key { font-family: var(--mono); font-size: 12.5px; color: var(--accent-ink); font-weight: 500; word-break: break-word; }
+  .ledger-val { font-size: 13.5px; color: var(--ink-soft); }
+
+  .ledger-group-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding: 10px 16px 6px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  footer.doc-foot {
+    margin-top: 52px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 36px 16px 72px; }
+    h1.title { font-size: 27px; }
+    .doc-meta { text-align: left; }
+    .ledger-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <header class="doc-head">
+    <div class="brand">
+      <div class="brand-mark">T</div>
+      <div>
+        <div class="brand-name">Taipo</div>
+        <div class="brand-sub">Chrome Extension</div>
+      </div>
+    </div>
+    <div class="doc-meta">
+      <div>Effective: 2026-09-13</div>
+      <div>Version: 1.0</div>
+    </div>
+  </header>
+
+  <h1 class="title">Privacy Policy</h1>
+  <p class="lede">Taipo automates Amazon Associates and Creator Connections reporting inside your own browser. This page explains, plainly, what the extension can access and — just as important — what it never does with it.</p>
+
+  <div class="callout" style="margin-bottom:40px;">
+    <strong>In short:</strong> Taipo has no server. Everything it reads or stores stays on your own device, in your own browser. Nothing is sold, shared, or transmitted to us or anyone else.
+  </div>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">§1</span><h2>What Taipo reads</h2></div>
+    <p>Taipo reads pages you are already logged into and viewing as part of your Amazon Associates, Amazon Influencer, and Creator Connections accounts — earnings reports, click and conversion data, product and campaign details, and (if you configure it) your own YouTube channel's video list. It reads this data either when you manually run a task, or on a schedule you set yourself.</p>
+    <p>Taipo does not access any Amazon account other than the one you are signed into in your browser, and does not access any page or account you haven't directed it toward.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">§2</span><h2>Where it goes</h2></div>
+    <p>Nowhere but your own machine. Fetched data and your settings are stored locally using your browser's own storage (<code class="tok">chrome.storage</code> and IndexedDB). Taipo does not operate a server, does not upload your data anywhere, and has no account system of its own to upload it <em>to</em>.</p>
+    <p>Uninstalling the extension removes all of this data along with it.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">§3</span><h2>What we don't do</h2></div>
+    <ul>
+      <li>No analytics or tracking SDKs of any kind.</li>
+      <li>No advertising, and no data shared with advertisers.</li>
+      <li>No selling, renting, or otherwise sharing your data with third parties.</li>
+      <li>No access to any site or account beyond what's listed in §4.</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">§4</span><h2>Permissions, and why each exists</h2></div>
+    <p>Chrome extensions must declare everything they might touch up front. Here is every permission Taipo requests and the specific job it does:</p>
+
+    <div class="ledger" style="margin-top:16px;">
+      <div class="ledger-group-label">Browser permissions</div>
+      <div class="ledger-row"><div class="ledger-key">tabs</div><div class="ledger-val">Find, open, and switch between the Amazon tabs a task needs to run in.</div></div>
+      <div class="ledger-row"><div class="ledger-key">tabGroups</div><div class="ledger-val">Group the tabs a running task opens, so a multi-step fetch doesn't scatter loose tabs across your window.</div></div>
+      <div class="ledger-row"><div class="ledger-key">scripting</div><div class="ledger-val">Read data out of an open Amazon or YouTube page you're already viewing — the mechanism behind every data fetch.</div></div>
+      <div class="ledger-row"><div class="ledger-key">storage / unlimitedStorage</div><div class="ledger-val">Save your settings and fetched data locally. Sales and collection history can grow past Chrome's default storage limit, hence the unlimited grant.</div></div>
+      <div class="ledger-row"><div class="ledger-key">alarms</div><div class="ledger-val">Run a task on the schedule you set, without needing the dashboard tab open.</div></div>
+      <div class="ledger-row"><div class="ledger-key">notifications</div><div class="ledger-val">Show a system notification when a scheduled task finishes or a watcher rule you configured fires.</div></div>
+      <div class="ledger-row"><div class="ledger-key">webRequest</div><div class="ledger-val">Observe (never modify) requests to Amazon's own domains, to capture the request details needed to call the same internal endpoints the Amazon page itself already uses.</div></div>
+      <div class="ledger-row"><div class="ledger-key">contextMenus</div><div class="ledger-val">Adds a right-click shortcut for looking up a product ASIN.</div></div>
+
+      <div class="ledger-group-label">Site access</div>
+      <div class="ledger-row"><div class="ledger-key">amazon.com<br>amazon.ca / .co.uk / .com.au</div><div class="ledger-val">Read your own Associates, Influencer, and Creator Connections data for each marketplace you use.</div></div>
+      <div class="ledger-row"><div class="ledger-key">m.media-amazon.com</div><div class="ledger-val">Load product images already shown on pages you're viewing.</div></div>
+      <div class="ledger-row"><div class="ledger-key">youtube.com</div><div class="ledger-val">Match your uploaded Amazon videos against your own YouTube channel, if you've configured one.</div></div>
+      <div class="ledger-row"><div class="ledger-key">raw.githubusercontent.com</div><div class="ledger-val">Fetch a small, static, public JSON file listing in-app feature announcements. No user data is sent with this request.</div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">§5</span><h2>Changes to this policy</h2></div>
+    <p>If Taipo's data handling changes — for example, an optional feature that syncs a backup to a cloud service you connect yourself — this page will be updated first, and the version number above will change accordingly.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">§6</span><h2>Contact</h2></div>
+    <p>Questions about this policy or how Taipo handles data can be sent to <code class="tok">mckayjunk@gmail.com</code>.</p>
+  </section>
+
+  <footer class="doc-foot">
+    <span>Taipo — Amazon Associates &amp; Creator Connections automation</span>
+    <span>Privacy Policy v1.0</span>
+  </footer>
+
+</div>
+</body>
+</html>
