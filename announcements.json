@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-09-28-upload-affiliate-plus",
+    "type": "large",
+    "date": "2026-09-28T20:00:00Z",
+    "title": "Live Affiliate+ status on the upload page, plus a real bug fix",
+    "teaser": "Click straight from the video-upload page to accept a product's Affiliate+ campaigns — checked live, not from a stale cache. Plus a real bug fix for silently-failed campaign accepts.",
+    "body": "Amazon's \"Edit post\" video-upload page now shows a live Affiliate+ status badge next to the product you've tagged: green if you're already in an active campaign, yellow if there's a new opportunity, grey if there's none. It's checked fresh against Amazon every time, not from Taipo's own cache, since a just-uploaded video's product has usually never been checked before.\n\nClick the yellow badge to accept every available campaign for that product in one go, right from the upload page. Hovering over it shows how many opportunities are open, and flags how many look like they might already be claimed by other creators.\n\nWhile building this we also found and fixed a real bug: Amazon's own \"accept campaign\" request can come back looking successful even when the campaign was actually rejected (for example, already fully claimed). Taipo now reads the real result instead of trusting that response — this fixes silent false-\"accepted\" reports anywhere Taipo accepts campaigns, not just the new upload-page badge.\n\nA few smaller things shipped in this update too:\n• Leftover \"TAIPO\" tab groups left behind by an interrupted run (for example, reloading the extension mid-task) now get cleaned up automatically.\n• The Watchlist \"Lists\" picker got a visual refresh — the default list is checked automatically, and every change now shows a clear save confirmation.\n• Comparison graphs on the Amazon Earnings Report can now be reordered by dragging them.\n• YouTube video pages show the exact upload date next to the usual \"x days ago\" text, since that text isn't always precise.\n\nEvery new page-enhancement setting defaults to on but can be turned off anytime from Settings, or from the Amazon Page Enhancements wizard.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
     "id": "2026-09-15-welcome",
     "type": "small",
     "date": "2026-09-15T09:00:00Z",
