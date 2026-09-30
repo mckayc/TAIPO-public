@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-09-29-tutorials-and-fixes",
+    "type": "large",
+    "date": "2026-09-29T20:00:00Z",
+    "title": "New Tutorials page, a more accurate Earnings graph, and a click-count fix",
+    "teaser": "A new Tutorials page with walkthrough videos, a fixed Earnings graph default, a corrected click count, and a decluttered sidebar.",
+    "body": "There's a new Tutorials page in the sidebar with short walkthrough videos showing how to use Taipo — start with the general walkthrough, and let us know on the Feedback page if you'd like a video on something specific.\n\nThe Earnings graph on Dashboard Home now defaults to your most recent complete day instead of today — Amazon never finalizes same-day earnings, so showing today's still-incomplete number by default was misleading. You can still page forward to today manually any time.\n\nWe also found and fixed a bug that could double-count clicks in some cases, so your click totals are now accurate. Task-complete notifications and the Click Log card now also show how many clicks came in during that specific run, not just the running total.\n\nThe Carousel A/B Test tool's \"View Saved Results\" and \"Compare Result Tables\" screens are now merged into one — click any date to view it alone, or check several to compare them, with a new CSV export for a product's full saved history.\n\nFinally, the left sidebar got a cleanup: a more compact clock, a two-column layout at the bottom, and tighter task cards, so it takes up less space and is easier to scan. Notifications now live next to the Edit Dashboard button up top, with an unread count badge.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
     "id": "2026-09-28-upload-affiliate-plus",
     "type": "large",
     "date": "2026-09-28T20:00:00Z",
