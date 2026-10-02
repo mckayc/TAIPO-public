@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-01-video-tracking-and-alerts",
+    "type": "large",
+    "date": "2026-10-01T22:00:00Z",
+    "title": "Keep Video Info Updated, smarter video alerts, and a privacy note",
+    "teaser": "A new task that keeps your video stats and status current, better Watcher Alerts for videos, and an anonymous usage ping we want you to know about.",
+    "body": "There's a new task you can add from Add Tasks & Features called \"Keep Video Info Updated.\" Your existing CC-accepting task is built to be fast — it only ever looks at videos it hasn't seen before, which is right for finding new campaign opportunities but means a video's likes, views, and product tag stay frozen at whatever they were the first time it was discovered. This new task is the opposite: it re-checks every video you've already uploaded, once a day by default, so that data actually stays current. It also now tracks a video's real status (live, archived, etc.) — useful since Amazon recently started auto-publishing US videos to other marketplaces and archiving some originals in the process.\n\nWatcher Alerts got several additions: new sample alerts for Views, Avg % Viewed, Avg View Duration, Last Edit Date, and Video Archived/Status Changed. Every alert now shows which of your saved tasks will actually produce the data it's watching, so you're not left wondering why an alert never fires. And if a video loses its tagged product, Taipo now remembers the original product's title and ASIN at the moment it happens — so \"Video Lost Product Tag\" alerts can actually tell you what to search Amazon for, instead of just saying a video lost its tag.\n\nOne more thing, in the interest of being upfront: this version adds an anonymous install ping, since the Chrome Web Store's own install count has looked frozen since launch. It sends a random install ID and your Taipo version — nothing about your Amazon account, earnings, or browsing. There's also an optional, off-by-default toggle in Settings (\"Share anonymous usage stats\") that, if you turn it on, additionally shares your task count and which built-in task types you use, to help us understand which features actually get used. See our privacy policy for the full details.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
     "id": "2026-09-29-tutorials-and-fixes",
     "type": "large",
     "date": "2026-09-29T20:00:00Z",
