@@ -199,8 +199,8 @@
       </div>
     </div>
     <div class="doc-meta">
-      <div>Effective: 2026-09-13</div>
-      <div>Version: 1.0</div>
+      <div>Effective: 2026-10-01</div>
+      <div>Version: 1.1</div>
     </div>
   </header>
 
@@ -208,7 +208,7 @@
   <p class="lede">Taipo automates Amazon Associates and Creator Connections reporting inside your own browser. This page explains, plainly, what the extension can access and — just as important — what it never does with it.</p>
 
   <div class="callout" style="margin-bottom:40px;">
-    <strong>In short:</strong> Taipo has no server. Everything it reads or stores stays on your own device, in your own browser. Nothing is sold, shared, or transmitted to us or anyone else.
+    <strong>In short:</strong> Your Amazon data never leaves your own browser — Taipo has no server for it, and nothing about your sales, earnings, or account is ever sent anywhere. The one exception is a minimal, anonymous usage ping, unrelated to your Amazon data, described in §3.
   </div>
 
   <section class="sec">
@@ -219,22 +219,33 @@
 
   <section class="sec">
     <div class="sec-head"><span class="sec-num">§2</span><h2>Where it goes</h2></div>
-    <p>Nowhere but your own machine. Fetched data and your settings are stored locally using your browser's own storage (<code class="tok">chrome.storage</code> and IndexedDB). Taipo does not operate a server, does not upload your data anywhere, and has no account system of its own to upload it <em>to</em>.</p>
-    <p>Uninstalling the extension removes all of this data along with it.</p>
+    <p>Nowhere but your own machine. Fetched data and your settings are stored locally using your browser's own storage (<code class="tok">chrome.storage</code> and IndexedDB). Taipo does not operate a server for this data, does not upload it anywhere, and has no account system of its own to upload it <em>to</em>.</p>
+    <p>Uninstalling the extension removes all of this data along with it. The one unrelated exception — a small, anonymous usage ping that contains none of your Amazon data — is described next, in §3.</p>
   </section>
 
   <section class="sec">
-    <div class="sec-head"><span class="sec-num">§3</span><h2>What we don't do</h2></div>
+    <div class="sec-head"><span class="sec-num">§3</span><h2>Anonymous usage statistics</h2></div>
+    <p>Taipo sends a daily ping to our own analytics endpoint so we can track real install and usage counts, separately from the Chrome Web Store's own count. This is unrelated to §1 and §2 — it never includes any Amazon, Associates, Influencer, or Creator Connections data, and is not linked to your Amazon account, name, or email.</p>
+    <p>Two tiers:</p>
     <ul>
-      <li>No analytics or tracking SDKs of any kind.</li>
+      <li><strong>Always on:</strong> a randomly generated install identifier and Taipo's version number. Your approximate US state may be inferred by our server from your network connection at the moment of the ping — Taipo itself never reads or transmits any location or IP data; that inference, if any, happens entirely on the receiving end.</li>
+      <li><strong>Opt-in</strong> (Settings → "Share anonymous usage stats," off by default): additionally includes how many tasks you have configured and which built-in task types they are. Task names, schedules, and any data those tasks fetch are never included.</li>
+    </ul>
+    <p>This data is not sold, shared with third parties, or used for anything beyond understanding Taipo's own usage.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">§4</span><h2>What we don't do</h2></div>
+    <ul>
+      <li>No analytics tied to your identity, your Amazon account, or your browsing — see §3 for the one minimal, anonymous exception.</li>
       <li>No advertising, and no data shared with advertisers.</li>
       <li>No selling, renting, or otherwise sharing your data with third parties.</li>
-      <li>No access to any site or account beyond what's listed in §4.</li>
+      <li>No access to any site or account beyond what's listed in §5.</li>
     </ul>
   </section>
 
   <section class="sec">
-    <div class="sec-head"><span class="sec-num">§4</span><h2>Permissions, and why each exists</h2></div>
+    <div class="sec-head"><span class="sec-num">§5</span><h2>Permissions, and why each exists</h2></div>
     <p>Chrome extensions must declare everything they might touch up front. Here is every permission Taipo requests and the specific job it does:</p>
 
     <div class="ledger" style="margin-top:16px;">
@@ -243,7 +254,7 @@
       <div class="ledger-row"><div class="ledger-key">tabGroups</div><div class="ledger-val">Group the tabs a running task opens, so a multi-step fetch doesn't scatter loose tabs across your window.</div></div>
       <div class="ledger-row"><div class="ledger-key">scripting</div><div class="ledger-val">Read data out of an open Amazon or YouTube page you're already viewing — the mechanism behind every data fetch.</div></div>
       <div class="ledger-row"><div class="ledger-key">storage / unlimitedStorage</div><div class="ledger-val">Save your settings and fetched data locally. Sales and collection history can grow past Chrome's default storage limit, hence the unlimited grant.</div></div>
-      <div class="ledger-row"><div class="ledger-key">alarms</div><div class="ledger-val">Run a task on the schedule you set, without needing the dashboard tab open.</div></div>
+      <div class="ledger-row"><div class="ledger-key">alarms</div><div class="ledger-val">Run a task on the schedule you set, without needing the dashboard tab open — also what triggers the daily anonymous usage ping described in §3.</div></div>
       <div class="ledger-row"><div class="ledger-key">notifications</div><div class="ledger-val">Show a system notification when a scheduled task finishes or a watcher rule you configured fires.</div></div>
       <div class="ledger-row"><div class="ledger-key">webRequest</div><div class="ledger-val">Observe (never modify) requests to Amazon's own domains, to capture the request details needed to call the same internal endpoints the Amazon page itself already uses.</div></div>
       <div class="ledger-row"><div class="ledger-key">contextMenus</div><div class="ledger-val">Adds a right-click shortcut for looking up a product ASIN.</div></div>
@@ -253,22 +264,23 @@
       <div class="ledger-row"><div class="ledger-key">m.media-amazon.com</div><div class="ledger-val">Load product images already shown on pages you're viewing.</div></div>
       <div class="ledger-row"><div class="ledger-key">youtube.com</div><div class="ledger-val">Match your uploaded Amazon videos against your own YouTube channel, if you've configured one.</div></div>
       <div class="ledger-row"><div class="ledger-key">raw.githubusercontent.com</div><div class="ledger-val">Fetch a small, static, public JSON file listing in-app feature announcements. No user data is sent with this request.</div></div>
+      <div class="ledger-row"><div class="ledger-key">taipo-telemetry.mckayjunk.workers.dev</div><div class="ledger-val">Receives the anonymous usage ping described in §3. No Amazon, Associates, Influencer, or Creator Connections data is ever sent to this address.</div></div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="sec-head"><span class="sec-num">§5</span><h2>Changes to this policy</h2></div>
+    <div class="sec-head"><span class="sec-num">§6</span><h2>Changes to this policy</h2></div>
     <p>If Taipo's data handling changes — for example, an optional feature that syncs a backup to a cloud service you connect yourself — this page will be updated first, and the version number above will change accordingly.</p>
   </section>
 
   <section class="sec">
-    <div class="sec-head"><span class="sec-num">§6</span><h2>Contact</h2></div>
+    <div class="sec-head"><span class="sec-num">§7</span><h2>Contact</h2></div>
     <p>Questions about this policy or how Taipo handles data can be sent to <code class="tok">mckayjunk@gmail.com</code>.</p>
   </section>
 
   <footer class="doc-foot">
     <span>Taipo — Amazon Associates &amp; Creator Connections automation</span>
-    <span>Privacy Policy v1.0</span>
+    <span>Privacy Policy v1.1</span>
   </footer>
 
 </div>
