@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-07-reconnect-google-and-carousel-upgrade",
+    "type": "large",
+    "date": "2026-10-07T18:00:00Z",
+    "title": "Action needed: reconnect Google once, plus a big Carousel Order Test upgrade",
+    "teaser": "If you use Drive Backup or multi-device sync, please reconnect your Google account once after updating. Also: much smaller Carousel Order Test data, per-video highlight colors, product stats, and a new consistency column.",
+    "body": "⚠ If you use Google Drive Backup, device handoff, or multi-device sync: please reconnect your Google account once from the Profile page after this update. We switched to a more reliable connection method that keeps itself signed in correctly instead of quietly expiring every hour or so, but it means your existing connection needs to be re-established one time. Until you reconnect, scheduled backups and device status checks will fail (you'll see a warning on the Profile page) — a single click on Connect fixes it for good.\n\nThe Carousel Order Test tool (Labs) got a major upgrade. Saved test runs now take roughly 10x less space — a run now stores one summary row per unique video instead of one row per video per reload, with no loss to anything the Compare or Results screens actually show. Existing older runs aren't touched automatically, but you can select any of them and hit \"Condense Selected\" in Saved Results to shrink them too.\n\nOther Carousel Test additions: highlighting multiple videos at once now gives each its own color instead of one shared color; a video's title now links straight to the video itself; product rating, price, how many were bought in the past month, and Best Seller Rank now show next to each tested product (cross-referenced from your own saved data, not a fresh lookup); a new \"L Streaks\" column shows the top 3 longest runs of consecutive reloads a video held the exact same rank (e.g. \"17,17,10@R1\") — separate from how often it showed up overall, and able to show whether Amazon keeps returning to a video for repeated long sittings or just parked it there once; and the Compare view now has summary cards (total unique videos/creators, most-shown video, date range, etc.) plus a \"Copy AI Prompt\" button tailored to spotting patterns across multiple saved runs.\n\nWe also fixed a real bug where duplicate blue \"Amazon Session\" tab groups could quietly pile up over weeks of normal use instead of staying at the one group they're meant to be.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
     "id": "2026-10-01-video-tracking-and-alerts",
     "type": "large",
     "date": "2026-10-01T22:00:00Z",
