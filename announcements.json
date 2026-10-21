@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-21-multi-device-standby-and-fixes",
+    "type": "large",
+    "date": "2026-10-21T06:00:00Z",
+    "title": "A live dashboard mirror for your other devices, a Standby mode you control, and site-wide fixes",
+    "teaser": "If you run Taipo on more than one device, a Standby device can now show a live read-only mirror of your active device's dashboard instead of stale data — with a setting to turn that off if you'd rather keep full access everywhere. Plus clearer delete icons everywhere, and a fix for a Google connection error some of you hit.",
+    "body": "If you use Google Drive Backup across more than one device, a device that's currently in Standby now gets a small, automatically-refreshed snapshot of your Active device's Dashboard Home — so glancing at a secondary computer or a laptop shows real current numbers instead of whatever was there the last time that device actually ran something.\n\nBy default, a Standby device is also read-only elsewhere (Tasks, Collections, Add Tasks & Features, Edit Tasks, Settings, and Labs tools are locked until that device Takes Over) — new ground for Taipo, so we added a setting for it: Profile page → Automated Backups → \"When this device is in Standby,\" choose Read-only (the new default) or Full Access, which keeps every device fully usable for browsing and editing like before, while still guaranteeing a Standby device's own scheduled tasks won't run there — only the Active device ever executes schedules, regardless of which mode you pick.\n\nIf you've seen a Google Drive Backup error mentioning \"insufficient authentication scopes,\" we found and fixed the underlying cause and added clearer messaging (including showing exactly which permissions your connection currently has) so it's actually diagnosable instead of a cryptic failure. If backups or device status have been failing for you, reconnecting from the Profile page should resolve it now.\n\nSite-wide: every delete icon across the app (Saved Results, Scheduled Tests, Collections, and more) is now a filled red circle instead of a plain grey glyph that was genuinely hard to see in either theme — also slightly bigger. Dashboard Home's Schedule card got a layout fix where Carousel Test rows could overlap their own countdown text.\n\nFor Labs users: Test Upper Carousel Order got a significant rework — Amazon shifted from reshuffling the carousel on every refresh to holding the same video set for a stretch before swapping all at once, so rapid single-page reloading stopped making sense. There's now a Round-Robin mode that cycles through a list of ASINs instead, plus a Media Kit tool for building a printable stats sheet to share with agents or sellers.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
     "id": "2026-10-07-reconnect-google-and-carousel-upgrade",
     "type": "large",
     "date": "2026-10-07T18:00:00Z",
