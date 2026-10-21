@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-21b-takeover-fix-and-standby-toggle",
+    "type": "large",
+    "date": "2026-10-21T18:00:00Z",
+    "title": "Fixed: Take Over could leave your tracking IDs and history behind, plus a Standby mode setting",
+    "teaser": "A real bug: Taking Over as the active device could leave your Associates tracking IDs unset (breaking every task) and your Reports/Watcher Alerts history empty. Also: a new setting controls whether a Standby device locks down or stays fully usable.",
+    "body": "If you run Taipo on more than one device and use the Take Over flow (from the sidebar's device status, or Profile), we found and fixed a real bug: Take Over was skipping your Associates/Onsite tracking IDs entirely, along with your Reports (Click Log) and Watcher Alerts history. On a device that didn't already have those set locally — a fresh install, or a server instance — this meant every task failed outright (you'd see something like \"Base Store ID not set\" or a Store ID switch timing out), and the Reports/Watcher Alerts cards came up empty even though everything else looked fine. Take Over now correctly brings these over. If you hit this, Take Over again (or just save your tracking IDs once more from Settings) and it should be resolved.\n\nAlso fixed: \"Amazon Session\" tab groups could keep opening with no task running at all, just from clicking around a normal Amazon product-upload page. The live Affiliate+ badge check on that page shares the same tab-group machinery a real task uses, but was never telling it the check was done — it now closes the group properly every time.\n\nSeparately, from yesterday's update: if you run Taipo across multiple devices, a Standby device now has a setting for how it behaves — Profile page → Automated Backups → \"When this device is in Standby.\" Read-only (default) shows a live mirror of your active device's dashboard and locks everything else until that device Takes Over; Full Access keeps every device completely usable for browsing and editing, while still guaranteeing Standby devices never actually run scheduled tasks.\n\nAlso: Debug Mode and \"Labs\" are the same checkbox, not two separate things to find — turning on Debug Mode now says directly that it also reveals a Labs section at the bottom of Add Tasks & Features.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
     "id": "2026-10-21-multi-device-standby-and-fixes",
     "type": "large",
     "date": "2026-10-21T06:00:00Z",
