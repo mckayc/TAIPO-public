@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-21c-labs-backup-fix-and-notification-toggle",
+    "type": "large",
+    "date": "2026-10-21T22:00:00Z",
+    "title": "Take Over now covers every feature's data, including Labs, plus a stuck-notification fix",
+    "teaser": "Carousel A/B Test's scheduled tests could get left behind on a Take Over, just like tracking IDs and Reports did before. Fixed properly this time, plus a new setting for notifications that get stuck on screen on a server install.",
+    "body": "Right after fixing Take Over's tracking-ID/Reports gap (previous update), we found the same kind of bug hiding in Labs: Carousel A/B Test's own scheduled tests didn't survive a Take Over either. Rather than patch that one case, we fixed the underlying design — Take Over now brings over everything in your local settings except a small, deliberate list of things that genuinely should stay per-device (like Debug Mode), instead of only the specific fields we'd noticed were missing so far. This closes the door on any other feature's data quietly getting left behind by a future handoff. Restored Carousel Test schedules are now also correctly re-armed right away, instead of needing a full reload first.\n\nIf you've seen Chromium notification popups that don't go away on their own — common on a headless or server install with no real OS notification manager for Chrome to hand them off to — there's a new per-device setting in Settings → Troubleshooting: \"Suppress system notifications on this device.\" Off by default everywhere else.",
+    "linkUrl": "",
+    "linkLabel": ""
+  },
+  {
     "id": "2026-10-21b-takeover-fix-and-standby-toggle",
     "type": "large",
     "date": "2026-10-21T18:00:00Z",
