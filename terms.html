@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taipo Terms of Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #faf8f4; --surface: #ffffff; --surface-2: #f2efe8;
+    --ink: #20242a; --ink-soft: #565f6b; --ink-faint: #8b9198;
+    --accent: #2b6e63; --accent-ink: #17423b; --accent-soft: #e3efec;
+    --border: #e4e0d8; --border-soft: #ece8de;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181a; --surface: #1a2023; --surface-2: #1f2629;
+      --ink: #e9ecec; --ink-soft: #a6b0af; --ink-faint: #6d7776;
+      --accent: #6bd6c1; --accent-ink: #bdf0e3; --accent-soft: #1e332e;
+      --border: #2b3336; --border-soft: #232b2d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14181a; --surface: #1a2023; --surface-2: #1f2629;
+    --ink: #e9ecec; --ink-soft: #a6b0af; --ink-faint: #6d7776;
+    --accent: #6bd6c1; --accent-ink: #bdf0e3; --accent-soft: #1e332e;
+    --border: #2b3336; --border-soft: #232b2d;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: 'Public Sans', -apple-system, 'Segoe UI', sans-serif;
+    font-size: 15.5px; line-height: 1.65;
+    padding: 56px 20px 96px;
+  }
+  .doc { max-width: 700px; margin: 0 auto; }
+  h1, h2, .brand-mark {
+    font-family: 'Source Serif 4', Georgia, 'Iowan Old Style', serif;
+  }
+  .doc-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 20px; padding-bottom: 28px; margin-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+  }
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--accent-soft); color: var(--accent-ink);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 18px; flex-shrink: 0;
+  }
+  .brand-name { font-weight: 700; font-size: 19px; color: var(--ink); }
+  .brand-sub { font-size: 12.5px; color: var(--ink-faint); margin-top: 1px; }
+  .doc-meta {
+    font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+    font-size: 11.5px; color: var(--ink-faint); text-align: right; line-height: 1.8;
+  }
+  h1 { font-size: 30px; font-weight: 700; margin: 0 0 6px; color: var(--ink); }
+  .lede { max-width: 56ch; color: var(--ink-soft); margin: 0 0 40px; }
+  .sec { margin-bottom: 34px; }
+  .sec h2 {
+    font-size: 15px; font-weight: 600; color: var(--accent-ink);
+    margin: 0 0 12px; display: flex; align-items: baseline; gap: 10px;
+  }
+  .sec h2::before {
+    content: attr(data-n);
+    font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 500;
+    color: var(--ink-faint);
+  }
+  .sec p, .sec li { max-width: 66ch; color: var(--ink-soft); }
+  .sec ul { max-width: 64ch; padding-left: 20px; margin: 10px 0; }
+  .sec li { margin-bottom: 6px; }
+  .sec strong { color: var(--ink); font-weight: 600; }
+  .callout {
+    background: var(--surface-2); border: 1px solid var(--border-soft);
+    border-radius: 10px; padding: 16px 18px; margin: 18px 0;
+    font-size: 14px; color: var(--ink-soft);
+  }
+  .callout strong { color: var(--ink); }
+  code {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.92em;
+    background: var(--surface-2); border: 1px solid var(--border-soft);
+    border-radius: 4px; padding: 1px 5px;
+  }
+  a { color: var(--accent); }
+  .doc-foot {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--ink-faint);
+  }
+  @media (max-width: 560px) {
+    body { padding: 32px 18px 72px; }
+    h1 { font-size: 25px; }
+    .doc-head { flex-direction: column; }
+    .doc-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <header class="doc-head">
+    <div class="brand">
+      <div class="brand-mark">T</div>
+      <div>
+        <div class="brand-name">Taipo</div>
+        <div class="brand-sub">Chrome Extension</div>
+      </div>
+    </div>
+    <div class="doc-meta">
+      Effective 2026-10-20<br>
+      Version 1.0
+    </div>
+  </header>
+
+  <h1>Terms of Service</h1>
+  <p class="lede">The short version: Taipo is a free tool you run yourself, at your own risk, to help track your own Amazon Associates and Creator Connections activity. Use it responsibly and don't blame us if something goes sideways.</p>
+
+  <div class="sec">
+    <h2 data-n="01">What Taipo is</h2>
+    <p>Taipo is a browser extension that reads pages you're already logged into — Amazon Associates, Amazon Influencer, Amazon Creator Connections, and optionally your own YouTube channel — and organizes what it finds into a dashboard. It can also automate repetitive page visits on a schedule you set up yourself.</p>
+    <p>It's provided free, with no account, subscription, or payment involved.</p>
+  </div>
+
+  <div class="sec">
+    <h2 data-n="02">Your responsibility</h2>
+    <p>You're responsible for how you use Taipo, including:</p>
+    <ul>
+      <li>Staying within Amazon's Associates Program Operating Agreement and any other terms that apply to your accounts — Taipo automates browsing your own logged-in session, but it's on you to use that automation in a way those agreements allow.</li>
+      <li>Keeping your own login credentials and account access secure.</li>
+      <li>Reviewing any data Taipo surfaces before relying on it for a real decision — see Section 4.</li>
+    </ul>
+    <div class="callout"><strong>Taipo doesn't act on your Amazon account's behalf in any way Amazon itself wouldn't attribute directly to you</strong> — it reads pages and reloads them the same way you would by clicking around yourself, just automated.</div>
+  </div>
+
+  <div class="sec">
+    <h2 data-n="03">No warranty</h2>
+    <p>Taipo is provided <strong>"as is,"</strong> with no warranty of any kind — no guarantee it's error-free, available at any given time, or fit for a particular purpose. Amazon, YouTube, and Google can change their own pages or APIs at any time without notice, which can break parts of Taipo until it's updated.</p>
+  </div>
+
+  <div class="sec">
+    <h2 data-n="04">Limitation of liability</h2>
+    <p>To the fullest extent the law allows, the developer isn't liable for any damages — direct, indirect, incidental, or consequential — arising from using or being unable to use Taipo. This includes (without limitation): lost or inaccurate data, missed earnings or opportunities, or any action taken against your Amazon, YouTube, or Google account as a result of using this tool.</p>
+    <p>This is a free, independently-built tool, not a professional service with guarantees behind it.</p>
+  </div>
+
+  <div class="sec">
+    <h2 data-n="05">Your data stays yours</h2>
+    <p>Taipo's own data handling is covered in full in the <a href="privacy.html">Privacy Policy</a> — in short, what it collects stays in your browser, and the optional Google Drive backup feature writes only to a Google Drive folder in your own Google account, under your own control.</p>
+  </div>
+
+  <div class="sec">
+    <h2 data-n="06">Changes</h2>
+    <p>Taipo, and these terms, may change over time. Updates to this page will appear here first, with the version number above changed to reflect it.</p>
+  </div>
+
+  <div class="sec">
+    <h2 data-n="07">Contact</h2>
+    <p>Questions about these terms: <a href="mailto:mckayjunk@gmail.com">mckayjunk@gmail.com</a></p>
+  </div>
+
+  <footer class="doc-foot">
+    <span>Taipo</span>
+    <span>Terms of Service · v1.0</span>
+  </footer>
+
+</div>
+</body>
+</html>
