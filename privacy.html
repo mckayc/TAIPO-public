@@ -136,6 +136,7 @@
     color: var(--ink-soft);
   }
   .callout strong { color: var(--ink); }
+  .sec a, .callout a, footer.doc-foot a { color: var(--accent); }
 
   .ledger {
     border: 1px solid var(--border);
@@ -199,8 +200,8 @@
       </div>
     </div>
     <div class="doc-meta">
-      <div>Effective: 2026-10-20</div>
-      <div>Version: 1.2</div>
+      <div>Effective: 2026-11-07</div>
+      <div>Version: 1.3</div>
     </div>
   </header>
 
@@ -208,95 +209,135 @@
   <p class="lede">Taipo automates Amazon Associates and Creator Connections reporting inside your own browser. This page explains, plainly, what the extension can access and — just as important — what it never does with it.</p>
 
   <div class="callout" style="margin-bottom:40px;">
-    <strong>In short:</strong> Your Amazon data stays local by default — Taipo has no server for it, and nothing about your sales, earnings, or account is sent anywhere unless you explicitly turn on Google Drive Backup yourself. Even then, it only ever goes to a folder in your own Google Drive, never to a server Taipo operates. The other exception is a minimal, anonymous usage ping, unrelated to your Amazon data, described in §4.
+    <strong>In short:</strong> Your data stays in your own browser by default — Taipo has no server for it and no account system of its own. Data only leaves your browser when you connect a service yourself (your own Google Drive, your YouTube channel, GeniusLink, or Amazon's Creators API), and then it goes only to that service, under your own account. The one exception is a minimal, anonymous usage ping, unrelated to your data, described in §6.
   </div>
 
   <section class="sec">
     <div class="sec-head"><span class="sec-num">§1</span><h2>What Taipo reads</h2></div>
-    <p>Taipo reads pages you are already logged into and viewing as part of your Amazon Associates, Amazon Influencer, and Creator Connections accounts — earnings reports, click and conversion data, product and campaign details, and (if you configure it) your own YouTube channel's video list. It reads this data either when you manually run a task, or on a schedule you set yourself.</p>
+    <p>Taipo reads pages you are already signed into as part of your Amazon Associates, Amazon Influencer, and Creator Connections accounts — earnings reports, click and conversion data, and product and campaign details. It also reads public Amazon product pages (title, price, rankings, product details) and, if you use the Walmart availability feature, public Walmart.com product pages. It reads this data when you run a task, or on a schedule you set yourself.</p>
     <p>Taipo does not access any Amazon account other than the one you are signed into in your browser, and does not access any page or account you haven't directed it toward.</p>
   </section>
 
   <section class="sec">
     <div class="sec-head"><span class="sec-num">§2</span><h2>Where it goes</h2></div>
-    <p>By default, nowhere but your own machine. Fetched data and your settings are stored locally using your browser's own storage (<code class="tok">chrome.storage</code> and IndexedDB). Taipo does not operate a server for this data, and has no account system of its own to upload it <em>to</em>.</p>
-    <p>Uninstalling the extension removes all of this data along with it, except for whatever you've separately chosen to back up to your own Google Drive — see §3.</p>
+    <p>By default, nowhere but your own machine. Fetched data, notes, and settings are stored locally using your browser's own storage (<code class="tok">chrome.storage</code> and IndexedDB). Taipo does not operate a server for this data.</p>
+    <p>Some small settings (such as your tracking IDs) and, as a fallback, your notes are stored in <code class="tok">chrome.storage.sync</code>, which Chrome itself syncs between your own signed-in Chrome browsers. That sync is run by Chrome under your Google account, not by Taipo.</p>
+    <p>Uninstalling the extension removes all locally stored data along with it, except for whatever you've separately saved to your own Google Drive — see §3.</p>
   </section>
 
   <section class="sec">
-    <div class="sec-head"><span class="sec-num">§3</span><h2>Optional: Google Drive Backup &amp; multi-device sync</h2></div>
-    <p>Off by default. If you choose to connect a Google account from the Profile page, Taipo gains the ability to write to a folder it creates in <strong>your own</strong> Google Drive, named "Taipo Backups." Nothing in this section happens unless you take that explicit step.</p>
-    <p>Once connected, three kinds of files can be written there, all under your own Google account, never to any server Taipo operates:</p>
+    <div class="sec-head"><span class="sec-num">§3</span><h2>Optional: Google account connections</h2></div>
+    <p>Off by default. You can connect Google services from Taipo's Profile page or Settings → Connections. Each one shows Google's own sign-in and consent screen, asks only for the permission listed below, and can be disconnected separately. Nothing in this section happens unless you take that step yourself.</p>
+
+    <div class="ledger" style="margin:16px 0;">
+      <div class="ledger-group-label">Google permissions Taipo can request</div>
+      <div class="ledger-row"><div class="ledger-key">drive.file</div><div class="ledger-val">Create and update files in a "Taipo Backups" folder in your own Google Drive. By Google's design, this permission only lets Taipo see files it created itself — it cannot browse, read, or change any other file in your Drive.</div></div>
+      <div class="ledger-row"><div class="ledger-key">userinfo.email</div><div class="ledger-val">Show which Google account is connected (e.g. "Connected as you@gmail.com").</div></div>
+      <div class="ledger-row"><div class="ledger-key">youtube.readonly</div><div class="ledger-val">Read your own YouTube channel's video list and each video's title, description, publish date, and public statistics (views, likes, comments). Read-only — Taipo cannot upload, edit, delete, or comment on anything.</div></div>
+      <div class="ledger-row"><div class="ledger-key">yt-analytics.readonly</div><div class="ledger-val">Read daily view counts for videos on your own channel, so you can compare how videos perform over a date range. Read-only — Taipo cannot change anything on YouTube.</div></div>
+    </div>
+
+    <p>With Google Drive connected, Taipo can write these files to the "Taipo Backups" folder, all under your own Google account and never to any server Taipo operates:</p>
     <ul>
-      <li><strong>Full backups</strong> — a snapshot of your local settings and fetched data (the same data described in §1), written on the schedule you configure, so it can be restored if you reinstall or switch devices.</li>
-      <li><strong>Device coordination files</strong> — small control files used only if you run Taipo on more than one device: which device is currently "active," and a periodic heartbeat timestamp from each device you've connected. These contain no Amazon data.</li>
-      <li><strong>A small dashboard snapshot</strong> — a lightweight copy of what your Dashboard Home page currently shows (the same summary cards you'd see on screen), refreshed periodically, so a second device you own can display a read-only mirror of your main device's dashboard without needing a full backup transfer.</li>
+      <li><strong>Backups</strong> — a snapshot of your settings and fetched data (§1), on the schedule you set, so it can be restored on reinstall or on another device.</li>
+      <li><strong>Notes sync files</strong> — your Taipo notes, so they sync between your own devices.</li>
+      <li><strong>Device coordination files</strong> — which of your devices is currently "active," plus a heartbeat timestamp per device. These contain no Amazon data.</li>
+      <li><strong>A dashboard snapshot</strong> — a lightweight copy of your Dashboard Home summary, so a second device you own can show a read-only mirror.</li>
+      <li><strong>Exports you choose to save there</strong>, such as a notes export.</li>
     </ul>
-    <p>This uses Google's <code class="tok">drive.file</code> permission scope specifically — by Google's own design, that means Taipo can only ever see or manage files <em>it creates itself</em>. It cannot browse, read, or touch any other file or folder already in your Drive.</p>
-    <p>You can disconnect at any time from the Profile page. Disconnecting stops future backups immediately but does not delete files already written — you're free to delete the "Taipo Backups" folder yourself directly in Google Drive whenever you'd like.</p>
+    <p>YouTube and YouTube Analytics data is stored only in your browser, alongside your other Taipo data, and in any backup you save to your own Drive.</p>
+
+    <div class="callout" style="margin:16px 0;">
+      <strong>Google API Services — Limited Use.</strong> Taipo's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Google user data is used only to provide the features described on this page, is never sold, never used for advertising, never transferred to anyone else, and never read by a person.
+    </div>
+
+    <p><strong>YouTube.</strong> Taipo uses YouTube API Services. By connecting YouTube you also agree to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>, and Google's handling of your data is covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+    <p><strong>Disconnecting.</strong> You can disconnect any Google service in Settings → Connections, which also revokes Taipo's access at Google. You can also revoke access at any time from your Google Account's <a href="https://myaccount.google.com/permissions">third-party access page</a>. Disconnecting stops future access immediately but does not delete files already in your Drive — delete the "Taipo Backups" folder yourself if you'd like them gone.</p>
   </section>
 
   <section class="sec">
-    <div class="sec-head"><span class="sec-num">§4</span><h2>Anonymous usage statistics</h2></div>
-    <p>Taipo sends a daily ping to our own analytics endpoint so we can track real install and usage counts, separately from the Chrome Web Store's own count. This is unrelated to §1–§3 — it never includes any Amazon, Associates, Influencer, or Creator Connections data, and is not linked to your Amazon account, name, or email.</p>
+    <div class="sec-head"><span class="sec-num">§4</span><h2>Optional: other connections</h2></div>
+    <ul>
+      <li><strong>GeniusLink.</strong> If you add a GeniusLink API key and secret, Taipo stores them in your browser and sends them only to GeniusLink (<code class="tok">api.geni.us</code>) to create short links for products you choose. They are included in backups you create, so a restored device keeps working.</li>
+      <li><strong>Amazon Creators API.</strong> If you add Creators API credentials from your Amazon Associates account, Taipo stores them in your browser and sends them only to Amazon (<code class="tok">api.amazon.com</code> to sign in, <code class="tok">creatorsapi.amazon</code> for product lookups) to read product details such as title, price, and sales rank.</li>
+    </ul>
+    <p>Keys and secrets are never sent anywhere else, and never to Taipo.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">§5</span><h2>Deleting your data</h2></div>
+    <ul>
+      <li><strong>In your browser:</strong> uninstall Taipo, or use the delete options in its Settings.</li>
+      <li><strong>In your Google Drive:</strong> delete the "Taipo Backups" folder.</li>
+      <li><strong>Access to your accounts:</strong> disconnect in Settings → Connections, or revoke it from your Google Account's third-party access page.</li>
+      <li><strong>Usage statistics (§6):</strong> they hold only a random install ID and version number, which can't be linked to you. Uninstalling Taipo stops them.</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">§6</span><h2>Anonymous usage statistics</h2></div>
+    <p>Taipo sends a daily ping to our own analytics endpoint so we can track real install and usage counts, separately from the Chrome Web Store's own count. It never includes any Amazon, Google, YouTube, or other account data, and is not linked to your name, email, or any account.</p>
     <p>Two tiers:</p>
     <ul>
-      <li><strong>Always on:</strong> a randomly generated install identifier and Taipo's version number. Your approximate US state may be inferred by our server from your network connection at the moment of the ping — Taipo itself never reads or transmits any location or IP data; that inference, if any, happens entirely on the receiving end.</li>
+      <li><strong>Always on:</strong> a randomly generated install identifier and Taipo's version number. Your approximate US state may be inferred by our server from your network connection at the moment of the ping — Taipo itself never reads or transmits any location or IP data.</li>
       <li><strong>Opt-in</strong> (Settings → "Share anonymous usage stats," off by default): additionally includes how many tasks you have configured and which built-in task types they are. Task names, schedules, and any data those tasks fetch are never included.</li>
     </ul>
     <p>This data is not sold, shared with third parties, or used for anything beyond understanding Taipo's own usage.</p>
   </section>
 
   <section class="sec">
-    <div class="sec-head"><span class="sec-num">§5</span><h2>What we don't do</h2></div>
+    <div class="sec-head"><span class="sec-num">§7</span><h2>What we don't do</h2></div>
     <ul>
-      <li>No analytics tied to your identity, your Amazon account, or your browsing — see §4 for the one minimal, anonymous exception.</li>
+      <li>No analytics tied to your identity, your accounts, or your browsing — see §6 for the one minimal, anonymous exception.</li>
       <li>No advertising, and no data shared with advertisers.</li>
       <li>No selling, renting, or otherwise sharing your data with third parties.</li>
-      <li>No access to your Google Drive beyond files Taipo itself creates, and only if you explicitly connect it — see §3.</li>
-      <li>No access to any site or account beyond what's listed in §6.</li>
+      <li>No access to your Google Drive beyond files Taipo itself creates, and no ability to change anything on your YouTube channel.</li>
+      <li>No access to any site or account beyond what's listed in §8.</li>
     </ul>
   </section>
 
   <section class="sec">
-    <div class="sec-head"><span class="sec-num">§6</span><h2>Permissions, and why each exists</h2></div>
+    <div class="sec-head"><span class="sec-num">§8</span><h2>Permissions, and why each exists</h2></div>
     <p>Chrome extensions must declare everything they might touch up front. Here is every permission Taipo requests and the specific job it does:</p>
 
     <div class="ledger" style="margin-top:16px;">
       <div class="ledger-group-label">Browser permissions</div>
       <div class="ledger-row"><div class="ledger-key">tabs</div><div class="ledger-val">Find, open, and switch between the Amazon tabs a task needs to run in.</div></div>
       <div class="ledger-row"><div class="ledger-key">tabGroups</div><div class="ledger-val">Group the tabs a running task opens, so a multi-step fetch doesn't scatter loose tabs across your window.</div></div>
-      <div class="ledger-row"><div class="ledger-key">scripting</div><div class="ledger-val">Read data out of an open Amazon or YouTube page you're already viewing — the mechanism behind every data fetch.</div></div>
+      <div class="ledger-row"><div class="ledger-key">scripting</div><div class="ledger-val">Read data out of an open Amazon or YouTube page — the mechanism behind most data fetches.</div></div>
       <div class="ledger-row"><div class="ledger-key">storage / unlimitedStorage</div><div class="ledger-val">Save your settings and fetched data locally. Sales and collection history can grow past Chrome's default storage limit, hence the unlimited grant.</div></div>
-      <div class="ledger-row"><div class="ledger-key">alarms</div><div class="ledger-val">Run a task on the schedule you set, without needing the dashboard tab open — also what triggers the daily anonymous usage ping (§4) and, if connected, Google Drive Backup (§3).</div></div>
-      <div class="ledger-row"><div class="ledger-key">notifications</div><div class="ledger-val">Show a system notification when a scheduled task finishes or a watcher rule you configured fires.</div></div>
+      <div class="ledger-row"><div class="ledger-key">alarms</div><div class="ledger-val">Run tasks, backups, notes sync, and note reminders on schedule without the dashboard tab open — also what triggers the daily anonymous usage ping (§6).</div></div>
+      <div class="ledger-row"><div class="ledger-key">notifications</div><div class="ledger-val">Show a system notification when a scheduled task finishes, a watcher rule fires, or a note reminder is due.</div></div>
       <div class="ledger-row"><div class="ledger-key">webRequest</div><div class="ledger-val">Observe (never modify) requests to Amazon's own domains, to capture the request details needed to call the same internal endpoints the Amazon page itself already uses.</div></div>
       <div class="ledger-row"><div class="ledger-key">contextMenus</div><div class="ledger-val">Adds a right-click shortcut for looking up a product ASIN.</div></div>
-      <div class="ledger-row"><div class="ledger-key">identity</div><div class="ledger-val">Shows Google's own sign-in screen when you choose to connect a Google account for Drive Backup (§3) — only used if you take that step yourself.</div></div>
+      <div class="ledger-row"><div class="ledger-key">identity</div><div class="ledger-val">Shows Google's own sign-in screen when you choose to connect a Google service (§3) — only used if you take that step yourself.</div></div>
 
       <div class="ledger-group-label">Site access</div>
-      <div class="ledger-row"><div class="ledger-key">amazon.com<br>amazon.ca / .co.uk / .com.au<br>affiliate-program.amazon.com</div><div class="ledger-val">Read your own Associates, Influencer, and Creator Connections data for each marketplace you use.</div></div>
-      <div class="ledger-row"><div class="ledger-key">m.media-amazon.com</div><div class="ledger-val">Load product images already shown on pages you're viewing.</div></div>
-      <div class="ledger-row"><div class="ledger-key">youtube.com</div><div class="ledger-val">Match your uploaded Amazon videos against your own YouTube channel, if you've configured one.</div></div>
+      <div class="ledger-row"><div class="ledger-key">amazon.com<br>amazon.ca / .co.uk / .com.au<br>affiliate-program.amazon.com</div><div class="ledger-val">Read your own Associates, Influencer, and Creator Connections data for each marketplace you use, and public product pages.</div></div>
+      <div class="ledger-row"><div class="ledger-key">m.media-amazon.com</div><div class="ledger-val">Load product images.</div></div>
+      <div class="ledger-row"><div class="ledger-key">walmart.com</div><div class="ledger-val">Check public Walmart product pages for availability, if you use that feature. No Walmart account is used.</div></div>
+      <div class="ledger-row"><div class="ledger-key">youtube.com</div><div class="ledger-val">Show extra details on YouTube video pages you visit (such as a video's exact publish date), if you turn that on.</div></div>
+      <div class="ledger-row"><div class="ledger-key">googleapis.com<br>accounts.google.com</div><div class="ledger-val">Google's own sign-in, Drive, YouTube, and YouTube Analytics APIs, used only for the optional connections in §3.</div></div>
+      <div class="ledger-row"><div class="ledger-key">api.geni.us</div><div class="ledger-val">GeniusLink's API, used only if you add GeniusLink keys (§4).</div></div>
+      <div class="ledger-row"><div class="ledger-key">api.amazon.com<br>creatorsapi.amazon</div><div class="ledger-val">Amazon's Creators API, requested only when you connect it (§4).</div></div>
       <div class="ledger-row"><div class="ledger-key">raw.githubusercontent.com</div><div class="ledger-val">Fetch a small, static, public JSON file listing in-app feature announcements. No user data is sent with this request.</div></div>
-      <div class="ledger-row"><div class="ledger-key">googleapis.com<br>accounts.google.com</div><div class="ledger-val">Google's own sign-in and Drive API, used only for the optional Drive Backup feature described in §3 — nothing here is contacted unless you connect your Google account yourself.</div></div>
-      <div class="ledger-row"><div class="ledger-key">taipo-telemetry.mckayjunk.workers.dev</div><div class="ledger-val">Receives the anonymous usage ping described in §4. No Amazon, Associates, Influencer, or Creator Connections data is ever sent to this address.</div></div>
+      <div class="ledger-row"><div class="ledger-key">taipo-telemetry.mckayjunk.workers.dev</div><div class="ledger-val">Receives the anonymous usage ping described in §6. No account data is ever sent to this address.</div></div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="sec-head"><span class="sec-num">§7</span><h2>Changes to this policy</h2></div>
+    <div class="sec-head"><span class="sec-num">§9</span><h2>Changes to this policy</h2></div>
     <p>If Taipo's data handling changes, this page will be updated first, and the version number above will change accordingly.</p>
   </section>
 
   <section class="sec">
-    <div class="sec-head"><span class="sec-num">§8</span><h2>Contact</h2></div>
+    <div class="sec-head"><span class="sec-num">§10</span><h2>Contact</h2></div>
     <p>Questions about this policy or how Taipo handles data can be sent to <code class="tok">mckayjunk@gmail.com</code>.</p>
   </section>
 
   <footer class="doc-foot">
-    <span>Taipo — Amazon Associates &amp; Creator Connections automation</span>
-    <span>Privacy Policy v1.2</span>
+    <span>Taipo — Amazon Associates &amp; Creator Connections automation · <a href="index.html">Home</a> · <a href="terms.html">Terms</a></span>
+    <span>Privacy Policy v1.3</span>
   </footer>
 
 </div>
