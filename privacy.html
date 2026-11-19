@@ -200,8 +200,8 @@
       </div>
     </div>
     <div class="doc-meta">
-      <div>Effective: 2026-11-07</div>
-      <div>Version: 1.3</div>
+      <div>Effective: 2026-11-19</div>
+      <div>Version: 1.4</div>
     </div>
   </header>
 
@@ -235,6 +235,7 @@
       <div class="ledger-row"><div class="ledger-key">userinfo.email</div><div class="ledger-val">Show which Google account is connected (e.g. "Connected as you@gmail.com").</div></div>
       <div class="ledger-row"><div class="ledger-key">youtube.readonly</div><div class="ledger-val">Read your own YouTube channel's video list and each video's title, description, publish date, and public statistics (views, likes, comments). Read-only — Taipo cannot upload, edit, delete, or comment on anything.</div></div>
       <div class="ledger-row"><div class="ledger-key">yt-analytics.readonly</div><div class="ledger-val">Read daily view counts for videos on your own channel, so you can compare how videos perform over a date range. Read-only — Taipo cannot change anything on YouTube.</div></div>
+      <div class="ledger-row"><div class="ledger-key">youtube.force-ssl</div><div class="ledger-val">Optional, separate permission, requested only if you turn on description editing for Link Health. Lets Taipo add or remove a short note (for example "original sold out — similar item linked") right after a geni.us link in your own videos' descriptions when that product's link is moved to a backup, and take it out again when the original is back. Taipo reads the video's current title, description, tags and category, and writes the same values back with only that note changed. It never uploads, deletes, or comments on anything, and never changes any other part of a video. Turning it off in Settings → Connections stops Taipo using it; to remove the permission at Google as well, use your Google Account's third-party access page.</div></div>
     </div>
 
     <p>With Google Drive connected, Taipo can write these files to the "Taipo Backups" folder, all under your own Google account and never to any server Taipo operates:</p>
@@ -258,7 +259,7 @@
   <section class="sec">
     <div class="sec-head"><span class="sec-num">§4</span><h2>Optional: other connections</h2></div>
     <ul>
-      <li><strong>GeniusLink.</strong> If you add a GeniusLink API key and secret, Taipo stores them in your browser and sends them only to GeniusLink (<code class="tok">api.geni.us</code>) to create short links for products you choose. They are included in backups you create, so a restored device keeps working.</li>
+      <li><strong>GeniusLink.</strong> If you add a GeniusLink API key and secret, Taipo stores them in your browser and sends them only to GeniusLink (<code class="tok">api.geni.us</code>) to create short links for products you choose and, if you use Link Health, to read your links' destinations, click counts and GeniusLink's out-of-stock flags, and to change a link's destination to a backup you set (and back again). They are included in backups you create, so a restored device keeps working.</li>
       <li><strong>Amazon Creators API.</strong> If you add Creators API credentials from your Amazon Associates account, Taipo stores them in your browser and sends them only to Amazon (<code class="tok">api.amazon.com</code> to sign in, <code class="tok">creatorsapi.amazon</code> for product lookups) to read product details such as title, price, and sales rank.</li>
     </ul>
     <p>Keys and secrets are never sent anywhere else, and never to Taipo.</p>
